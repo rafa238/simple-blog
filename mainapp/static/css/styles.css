@@ -229,8 +229,10 @@ p{
     padding: 10px;
     margin-top: 5px;
     background: #2ba977;
+    width: 20%;
     border: 1px solid black;
     color: white;
+    border-radius: 8px;
     transition: 300ms all;
 }
 .box form input[type="submit"]:hover,
@@ -289,6 +291,7 @@ p{
     overflow: hidden;
 }
 .article-item .image img{
+    float: left;
     width: 200px;
     height: 200px;
 }
@@ -324,3 +327,75 @@ p{
     width: 100px;
     text-align: center;
 }
+
+.alert-box {
+    padding: 20px;
+    background-color: #8C8;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.alert-box-yellow{
+    padding: 20px;
+    background-color: khaki;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/*Carrousel*/
+
+.gallery {
+    background: #EEE;
+}
+  
+.gallery-cell {
+    width: 66%;
+    height: 500px;
+    margin-right: 10px;
+    background: grey;
+    counter-increment: gallery-cell;
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+
+.gallery-cell img {
+    width: 100%;
+    opacity: 0.5;
+    filter: blur(75%);
+}
+
+.cell-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+  /* cell number 
+.gallery-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(gallery-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}*/

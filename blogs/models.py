@@ -1,6 +1,8 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
+from ckeditor.widgets import CKEditorWidget
+from django.forms import widgets
 
 # Create your models here.
 class Category(models.Model):
@@ -18,6 +20,7 @@ class Category(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=150, verbose_name="Titulo")
     content = RichTextField(verbose_name="Contenido")
+    description = RichTextField(verbose_name="Decripción breve del articulo", default=content)
     image = models.ImageField(default='null', verbose_name="Imagen", upload_to='articles')
     public = models.BooleanField(verbose_name="¿Publicado?")
     user = models.ForeignKey(User, editable=False ,verbose_name="Usuario", on_delete=models.CASCADE)

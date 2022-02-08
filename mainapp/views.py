@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
+
+from blogs.views import category
 from .forms import RegisterForm
 from django.contrib.auth import authenticate, login, logout
-
+from blogs.models import Article
 
 # Create your views here.
 def index(request):
-
-    return render(request, 'mainapp/index.html', {'title':"Inicio"})
+    tendences = Article.objects.filter(public=True).order_by("-created_at")[:3]
+    return render(request, 'mainapp/index.html', {'title':"Inicio", 'tendences': tendences})
 
 
 def about(request):

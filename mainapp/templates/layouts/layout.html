@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 
-        {% block title %} {%endblock%}|Sitio con django
+        {% block title %} {%endblock%}|Blog
     </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
@@ -18,7 +18,7 @@
         <div id="logotipo">
             <!--logo django-->
             <img src="{% static 'images/logo.png' %}">
-            <h1>Proyecto con django</h1>
+            <h1>Blogi</h1>
         </div>
 
     </header>
@@ -72,7 +72,7 @@
     
     <hr>
     <footer>
-        Blog con  django - {% now "d/m/Y h:m:s" %}
+        Blogi - {% now "d/m/Y h:m:s" %}
     </footer>
 </body>
 

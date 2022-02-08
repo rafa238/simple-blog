@@ -7,10 +7,10 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url="login")
 def list(request):
     #sacar articulos
-    articles = Article.objects.all()
+    articles = Article.objects.filter(public=True)
 
     #paginar articulos
-    paginator = Paginator(articles, 1)
+    paginator = Paginator(articles, 3)
 
     #recoger numero de pagina
     page = request.GET.get('page')
@@ -25,10 +25,11 @@ def list(request):
 def category(request, category_id):
 
     category = get_object_or_404(Category, id=category_id)
-
+    articles = Article.objects.filter(categories=category, public=True)
     return render(request, 'categories/category.html', {
         'title': "Categorias",
         'category':category,
+        'articles': articles
     }) 
 
 @login_required(login_url="login")
